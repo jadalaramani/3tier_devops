@@ -6,8 +6,12 @@ COPY package*.json ./
 
 RUN npm install
 
+RUN npm install dotenv mysql2
+
+RUN npm install -g pm2
+
 COPY . .
 
 EXPOSE 3500
 
-CMD ["npm","start"]
+CMD ["pm2-runtime", "index.js"]
