@@ -1,4 +1,6 @@
-FROM node:20-alpine
+# FROM node:20-alpine
+
+FROM node:18-slim RUN apt-get update && apt-get install -y default-mysql-client
 
 WORKDIR /app
 
